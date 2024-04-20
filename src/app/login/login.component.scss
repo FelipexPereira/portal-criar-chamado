@@ -1,0 +1,67 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-left: 20px;
+  // background-color: red;
+}
+
+.example-full-width {
+  width: 100%;
+  // background-color: green;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* Define duas colunas com larguras iguais */
+  // gap: 20px; /* Define um espaçamento entre as colunas */
+  height: 100%;
+  /* Define a altura total da tela */
+  // background-color: bisque;
+
+  .login-form {
+    width: 100%;
+    /* Define a largura do formulário como metade da tela */
+    /*max-width: 400px; /* Define uma largura máxima para o formulário */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente o conteúdo */
+    align-items: center;
+    /* Centraliza horizontalmente o conteúdo */
+    background-color: bisque;
+  }
+
+  .titulo-form {
+    text-transform: uppercase;
+    font: bold;
+  }
+
+  .button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .button-login:hover {
+    background-color: #4b2985;
+  }
+
+  .image-container {
+    width: 100%;
+    /* Define a largura da imagem como metade da tela */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: purple;
+    background-image: '../../assets/eu.jpeg';
+  }
+
+  img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura do contêiner */
+    max-height: 100%;
+    /* Garante que a imagem não ultrapasse a altura do contêiner */
+    background-size: cover;
+  }
+}
