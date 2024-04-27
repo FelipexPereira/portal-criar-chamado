@@ -1,0 +1,23 @@
+.geral {
+  width: 100%;
+  height: 100vh;
+  background-color: bisque;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // background-color: rgb(174, 22, 22);
+}
+
+.login-formulario {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.button {
+  width: 60%;
+}

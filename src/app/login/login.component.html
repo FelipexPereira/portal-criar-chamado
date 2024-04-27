@@ -7,11 +7,18 @@
       <div>
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input type="email" matInput [formControl]="emailFormControl" placeholder="email@example.com" />
-          <mat-error *ngIf="
+          <input
+            type="email"
+            matInput
+            [formControl]="emailFormControl"
+            placeholder="email@example.com"
+          />
+          <mat-error
+            *ngIf="
               emailFormControl.hasError('email') &&
               !emailFormControl.hasError('required')
-            ">
+            "
+          >
             Please enter a valid email address
           </mat-error>
           <mat-error *ngIf="emailFormControl.hasError('required')">
@@ -22,14 +29,21 @@
       <div>
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
-          <input type="password" matInput [formControl]="passwordFormControl" placeholder="Password" />
+          <input
+            type="password"
+            matInput
+            [formControl]="passwordFormControl"
+            placeholder="Password"
+          />
           <mat-error *ngIf="passwordFormControl.hasError('required')">
             Password is <strong>required</strong>
           </mat-error>
         </mat-form-field>
       </div>
       <div>
-        <button class="button button-login" mat-flat-button color="primary">Login</button>
+        <button class="button button-login" mat-flat-button color="primary">
+          Login
+        </button>
         <button class="button" mat-button>Esqueceu a senha</button>
       </div>
     </form>
