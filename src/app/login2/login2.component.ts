@@ -6,7 +6,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login2',
@@ -25,21 +31,21 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   templateUrl: './login2.component.html',
   styleUrl: './login2.component.scss',
 })
-export class Login2Component implements OnInit{
-  public loginForm!: FormGroup
+export class Login2Component implements OnInit {
+  public loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder) {}
 
-  }
   ngOnInit(): void {
-    this.loginForm=this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required,]
-    })
-    console.log('FUNCIONA', this.loginForm.value)
+      senha: ['', Validators.required],
+    });
+
+    console.log('FUNCIONA', this.loginForm.value);
   }
 
-  public onClick(){
-    console.log('click', this.loginForm.value)
+  public onClick() {
+    console.log('click', this.loginForm.value);
   }
 }
