@@ -1,0 +1,104 @@
+<div class="geral">
+  <!-- MENU -->
+  <div class="menu">
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>DataVerse</span>
+      <p class="titulo">Cadastro de chamados</p>
+    </mat-toolbar>
+  </div>
+  <!-- STATUS -->
+  <div class="status" fxLayout="row" fxLayoutAlign="end center">
+    <div>
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title class="status titulo">Em andamento</mat-card-title>
+          <mat-card-title class="status-valor">0</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title class="status-titulo">Encerrados</mat-card-title>
+          <mat-card-title class="status-valor">0</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title class="status titulo">Total</mat-card-title>
+          <mat-card-title class="status-valor">0</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <!-- FORULÁRIO -->
+  <div class="formulario">
+    <form class="formulario-cadastro" [formGroup]="cadastroForm">
+      <!-- buscar informações do usuário -->
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuário</mat-label>
+          <input matInput placeholder="Ex. Fulano" formControlName="usuario"/>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Setor</mat-label>
+          <input
+            matInput
+            placeholder="Ex. Contabilidade"
+           formControlName="setor"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Tipo do chamado</mat-label>
+          <mat-select formControlName="cadastroForm">
+            @for (tipoChamado of tipoChamado; track tipoChamado) {
+            <mat-option [value]="tipoChamado.value">{{
+              tipoChamado.viewValue
+            }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Resumo</mat-label>
+            <textarea
+              matInput
+              placeholder="Ex. Fale sobre o que acontenceu"
+              formControlName="resumo"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between center">
+        <button
+          mat-flat-button
+          [disabled]="this.cadastroForm.invalid"
+          color="primary"
+          class="button"
+          (click)="onClick()"
+        >
+          Salvar
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          class="button"
+          (click)="onClick()"
+        >
+          Limpar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
