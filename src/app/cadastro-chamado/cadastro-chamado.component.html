@@ -9,59 +9,60 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>DataVerse</span>
-      <p class="titulo">Cadastro de chamados</p>
+      <span class="logo">DataVerse</span>
+      <div class="titulo">
+        <p class="titulo-texto">Cadastro de chamados</p>
+      </div>
     </mat-toolbar>
   </div>
+  <!-- IMAGEM TESTE -->
+  <img src="../../assets/img.jfif" class="imagem">
   <!-- STATUS -->
-  <div class="status" fxLayout="row" fxLayoutAlign="end center">
+  <div class="status">
     <div>
       <mat-card class="status-card">
-        <mat-card-header>
-          <mat-card-title class="status titulo">Em andamento</mat-card-title>
-          <mat-card-title class="status-valor">0</mat-card-title>
+        <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+          <div class="card-info">
+            <p>Em andamento</p>
+            <p>0</p>
+          </div>
         </mat-card-header>
       </mat-card>
     </div>
     <div>
       <mat-card class="status-card">
-        <mat-card-header>
-          <mat-card-title class="status-titulo">Encerrados</mat-card-title>
-          <mat-card-title class="status-valor">0</mat-card-title>
-        </mat-card-header>
-      </mat-card>
-    </div>
-    <div>
-      <mat-card class="status-card">
-        <mat-card-header>
-          <mat-card-title class="status titulo">Total</mat-card-title>
-          <mat-card-title class="status-valor">0</mat-card-title>
+        <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+          <div class="card-info">
+            <p>Encerrados</p>
+            <p>0</p>
+          </div>
         </mat-card-header>
       </mat-card>
     </div>
   </div>
   <!-- FORULÁRIO -->
-  <div class="formulario">
+  <div class="formulario" fxLayout="row" fxLayoutAlign="center center">
     <form class="formulario-cadastro" [formGroup]="cadastroForm">
       <!-- buscar informações do usuário -->
       <div>
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="formulario-field">
           <mat-label>Usuário</mat-label>
-          <input matInput placeholder="Ex. Fulano" formControlName="usuario"/>
+          <input matInput placeholder="Ex. Fulano" formControlName="usuario" readonly/>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="formulario-field">
           <mat-label>Setor</mat-label>
           <input
             matInput
             placeholder="Ex. Contabilidade"
-           formControlName="setor"
+            formControlName="setor"
+            readonly
           />
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field>
+        <mat-form-field class="formulario-field">
           <mat-label>Tipo do chamado</mat-label>
-          <mat-select formControlName="cadastroForm">
+          <mat-select formControlName="tipoChamado">
             @for (tipoChamado of tipoChamado; track tipoChamado) {
             <mat-option [value]="tipoChamado.value">{{
               tipoChamado.viewValue
@@ -70,7 +71,7 @@
           </mat-select>
         </mat-form-field>
         <div>
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="formulario-field resumo-textarea">
             <mat-label>Resumo</mat-label>
             <textarea
               matInput
@@ -80,21 +81,18 @@
           </mat-form-field>
         </div>
       </div>
-      <div fxLayout="column" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="space-around center">
         <button
           mat-flat-button
-          [disabled]="this.cadastroForm.invalid"
           color="primary"
           class="button"
+          [disabled]="this.cadastroForm.invalid"
           (click)="onClick()"
         >
           Salvar
         </button>
         <button
-          mat-flat-button
-          color="primary"
-          class="button"
-          (click)="onClick()"
+        mat-button
         >
           Limpar
         </button>

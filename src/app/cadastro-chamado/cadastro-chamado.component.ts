@@ -51,8 +51,8 @@ export class CadastroChamadoComponent {
 
   ngOnInit(): void {
     this.cadastroForm = this.formBuilder.group({
-      usuario: ['', [Validators.required,]],
-      setor: ['', Validators.required],
+      usuario: ['Felipe Pereira'],
+      setor: ['TI'],
       tipoChamado: ['', Validators.required],
       resumo: ['', Validators.required],
     });
