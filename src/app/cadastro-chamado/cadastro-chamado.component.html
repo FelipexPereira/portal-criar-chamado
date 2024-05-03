@@ -15,8 +15,10 @@
       </div>
     </mat-toolbar>
   </div>
+
   <!-- IMAGEM TESTE -->
-  <img src="../../assets/img.jfif" class="imagem">
+  <img src="../../assets/img.jfif" class="imagem" />
+
   <!-- STATUS -->
   <div class="status">
     <div>
@@ -40,6 +42,7 @@
       </mat-card>
     </div>
   </div>
+
   <!-- FORULÁRIO -->
   <div class="formulario" fxLayout="row" fxLayoutAlign="center center">
     <form class="formulario-cadastro" [formGroup]="cadastroForm">
@@ -47,7 +50,12 @@
       <div>
         <mat-form-field class="formulario-field">
           <mat-label>Usuário</mat-label>
-          <input matInput placeholder="Ex. Fulano" formControlName="usuario" readonly/>
+          <input
+            matInput
+            placeholder="Ex. Fulano"
+            formControlName="usuario"
+            readonly
+          />
         </mat-form-field>
         <mat-form-field class="formulario-field">
           <mat-label>Setor</mat-label>
@@ -91,11 +99,7 @@
         >
           Salvar
         </button>
-        <button
-        mat-button
-        >
-          Limpar
-        </button>
+        <button mat-button>Limpar</button>
       </div>
     </form>
   </div>
