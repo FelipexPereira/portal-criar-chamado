@@ -14,6 +14,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { clear } from 'console';
 
 interface TipoChamado {
   value: string;
@@ -62,5 +63,11 @@ export class CadastroChamadoComponent {
 
   public onClick() {
     console.log('click', this.cadastroForm.value);
+  }
+
+  public reset() {
+    // Método para resetar o campo 'Resumo'
+    this.cadastroForm.get('resumo',)?.setValue('');
+    this.cadastroForm.get('tipoChamado',)?.setValue('');
   }
 }

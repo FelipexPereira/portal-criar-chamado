@@ -1,51 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import {
-  FormBuilder,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-treino',
   standalone: true,
-  imports: [
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FlexLayoutModule,
-    MatDividerModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    FormsModule,
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './treino.component.html',
-  styleUrl: './treino.component.scss',
+  styleUrl: './treino.component.scss'
 })
-export class TreinoComponent implements OnInit {
-  public loginForm!: FormGroup;
+export class TreinoComponent implements OnInit{
 
-  constructor(private formBuilder: FormBuilder) {}
+public form!: FormGroup
+
+  constructor(private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
-    // Crie seu FormGroup no método ngOnInit() ou no construtor
-    this.loginForm = this.formBuilder.group({
-      password: ['', Validators.required], // Campo obrigatório
-      email: ['', [Validators.required,]], // Campo obrigatório e formato de e-mail válido
-    });
-    console.log('Deu Certo', this.loginForm.value);
+      this.form = this.formBuilder.group({
+        pr: ['', Validators.maxLength(10)],
+        pl: [''],
+      })
   }
-
-  login(){
-    console.log('foi?',this.loginForm.value)
+  salvar(){
+    console.log(this.form.value)
   }
 }

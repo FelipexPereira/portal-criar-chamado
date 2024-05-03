@@ -85,11 +85,16 @@
               matInput
               placeholder="Ex. Fale sobre o que acontenceu"
               formControlName="resumo"
+              name="oi"
             ></textarea>
           </mat-form-field>
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+        class="button-div"
+      >
         <button
           mat-flat-button
           color="primary"
@@ -99,7 +104,9 @@
         >
           Salvar
         </button>
-        <button mat-button>Limpar</button>
+        <button mat-flat-button color="warn" class="button" (click)="reset()">
+          Limpar
+        </button>
       </div>
     </form>
   </div>
