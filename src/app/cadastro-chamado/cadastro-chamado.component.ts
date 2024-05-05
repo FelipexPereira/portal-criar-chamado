@@ -67,7 +67,7 @@ export class CadastroChamadoComponent {
 
   public reset() {
     // Método para resetar o campo 'Resumo'
-    this.cadastroForm.get('resumo',)?.setValue('');
-    this.cadastroForm.get('tipoChamado',)?.setValue('');
+    this.cadastroForm.get('resumo')?.setValue('');
+    this.cadastroForm.get('tipoChamado')?.setValue('');
   }
 }
