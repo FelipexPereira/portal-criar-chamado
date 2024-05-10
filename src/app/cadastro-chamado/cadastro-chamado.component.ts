@@ -14,7 +14,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { clear } from 'console';
+import { HttpClient } from '@angular/common/http';
 
 interface TipoChamado {
   value: string;
@@ -48,7 +48,9 @@ export class CadastroChamadoComponent {
 
   public cadastroForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.cadastroForm = this.formBuilder.group({
@@ -69,5 +71,13 @@ export class CadastroChamadoComponent {
     // Método para resetar o campo 'Resumo'
     this.cadastroForm.get('resumo')?.setValue('');
     this.cadastroForm.get('tipoChamado')?.setValue('');
+  }
+
+  inputFileChange(event: any) {
+    if (event.taget.files && event.target.files[0]) {
+      const foto = event.target.files(0);
+      const formData = new FormData();
+      formData.append('foto', foto);
+    }
   }
 }

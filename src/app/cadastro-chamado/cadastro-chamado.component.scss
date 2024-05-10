@@ -1,13 +1,9 @@
 .geral {
   width: 100%;
   height: 100vh;
-}
-
-.imagem {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  filter: blur(5px);
+  background-image: url(../../assets/img.jfif);
+  background-repeat: none;
+  background-size: 100% 100vh;
 }
 
 .titulo {
@@ -31,6 +27,7 @@
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .status-card {
   width: 145px;
   height: 70px;
@@ -41,8 +38,10 @@
 
 .card-info {
   margin: 0;
-  font-size: 16px; /* Tamanho de texto adequado */
-  font-weight: bold; /* Negrito */
+  font-size: 16px;
+  /* Tamanho de texto adequado */
+  font-weight: bold;
+  /* Negrito */
   color: white;
 }
 
@@ -54,6 +53,15 @@
 
 .resumo-textarea {
   height: 30vh;
+}
+
+.file-container {
+  justify-content: flex-end
+}
+
+.file {
+  margin-bottom: 2vh;
+  align-items: center;
 }
 
 .button {

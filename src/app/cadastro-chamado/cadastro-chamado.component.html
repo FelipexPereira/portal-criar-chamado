@@ -17,7 +17,9 @@
   </div>
 
   <!-- IMAGEM TESTE -->
-  <img src="../../assets/img.jfif" class="imagem" />
+  <!-- <div class="imagem"> -->
+  <!-- <img src="../../assets/img.jfif" class="imagem" /> -->
+
 
   <!-- STATUS -->
   <div class="status">
@@ -67,6 +69,7 @@
           />
         </mat-form-field>
       </div>
+
       <div>
         <mat-form-field class="formulario-field">
           <mat-label>Tipo do chamado</mat-label>
@@ -85,11 +88,16 @@
               matInput
               placeholder="Ex. Fale sobre o que acontenceu"
               formControlName="resumo"
-              name="oi"
             ></textarea>
           </mat-form-field>
         </div>
       </div>
+
+      <!-- FILE -->
+      <div class="file-container">
+        <input class="file" type="file" (change)="inputFileChange($event)" />
+      </div>
+
       <div
         fxLayout="row"
         fxLayoutAlign="space-around center"
@@ -111,5 +119,3 @@
     </form>
   </div>
 </div>
-
-<!-- upload de imagem -->
