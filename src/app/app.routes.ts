@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { TreinoComponent } from './treino/treino.component';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: '', component: CadastroChamadoComponent },
+  { path: '', component: LoginComponent },
+  { path: 'ss', component: CadastroChamadoComponent },
   { path: 's', component: TreinoComponent },
 ];
