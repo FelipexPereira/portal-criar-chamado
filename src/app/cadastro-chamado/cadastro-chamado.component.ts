@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
+import { MenuNavegacaoComponent } from '../shared/components/menu-navegacao/menu-navegacao/menu-navegacao.component';
 
 interface TipoChamado {
   value: string;
@@ -35,6 +36,7 @@ interface TipoChamado {
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MenuNavegacaoComponent
   ],
   templateUrl: './cadastro-chamado.component.html',
   styleUrl: './cadastro-chamado.component.scss',

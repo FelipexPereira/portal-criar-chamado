@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required], // Campo de senha com validador de requerido
     });
 
-    console.log('FUNCIONA', this.loginForm.value); // Exibe no console o valor do formulário de login
+    // console.log('FUNCIONA', this.loginForm.value); // Exibe no console o valor do formulário de login
   }
 
   public login() {
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
         // Se a solicitação for bem-sucedida
         if (response.status === 200) {
           // Se a resposta for 200 (OK)
-          this.router.navigate(['/cadastro']); // Navega para a página de cadastro
+          this.router.navigate(['']); // Navega para a página de cadastro
         }
       },
       error: (error: HttpErrorResponse) => {

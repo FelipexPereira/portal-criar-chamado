@@ -1,0 +1,28 @@
+<div
+  style="
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, purple, green);
+    align-items: center;
+  "
+>
+  <button mat-button (click)="home()">
+    <img src="../../../../../assets/logo2.png" style="width: 100px" alt="Ícone de Home" />
+  </button>
+
+  <button mat-button color="primary" [matMenuTriggerFor]="belowMenu">
+    Chamado
+  </button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item (click)="novo()">Novo</button>
+    <button mat-menu-item>Histórico</button>
+  </mat-menu>
+
+  <button mat-button color="primary">Dashboard</button>
+
+  <div style="margin-left: auto">
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>open_in_new</mat-icon>
+    </button>
+  </div>
+</div>
