@@ -77,6 +77,8 @@ export class LoginComponent implements OnInit {
           // Se a resposta for 200 (OK)
           this.router.navigate(['']); // Navega para a página de cadastro
           this.cookie.set('USER_TOKEN', response.accessToken)
+
+          alert('Seja Bem-Vindo!!')
         }
       },
       error: (error: HttpErrorResponse) => {

@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-menu-navegacao',
@@ -12,9 +13,10 @@ import { Router } from '@angular/router';
   styleUrl: './menu-navegacao.component.scss',
 })
 export class MenuNavegacaoComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cookie: CookieService) {}
 
   public logout() {
+    this.cookie.delete('USER_TOKEN');
     this.router.navigateByUrl('/login');
   }
   public home() {
