@@ -19,6 +19,7 @@ import { LoginResponse } from './interface/login.models'; // Importação do mod
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http'; // Importação dos módulos HTTP do Angular
 import { Router } from '@angular/router'; // Importação do serviço de roteamento
 import { CommonModule } from '@angular/common'; // Importação do módulo CommonModule
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login2', // Seletor do componente
@@ -46,7 +47,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder, // Injeção do FormBuilder para construção de formulários
     private loginService: LoginService, // Injeção do serviço de login
-    private router: Router // Injeção do serviço de roteamento
+    private router: Router, // Injeção do serviço de roteamento
+    private cookie: CookieService
   ) {}
 
   ngOnInit(): void {
@@ -74,6 +76,7 @@ export class LoginComponent implements OnInit {
         if (response.status === 200) {
           // Se a resposta for 200 (OK)
           this.router.navigate(['']); // Navega para a página de cadastro
+          this.cookie.set('USER_TOKEN', response.accessToken)
         }
       },
       error: (error: HttpErrorResponse) => {

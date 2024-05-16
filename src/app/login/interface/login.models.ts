@@ -2,7 +2,7 @@ export interface LoginResponse{
   status: number;
   data: Array<any>;
   menssage: string;
-  acessToken: string;
+  accessToken: string;
 }
 
 export interface LoginEnvio{
