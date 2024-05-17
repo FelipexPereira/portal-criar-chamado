@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder, // Injeção do FormBuilder para construção de formulários
     private loginService: LoginService, // Injeção do serviço de login
     private router: Router, // Injeção do serviço de roteamento
-    private cookie: CookieService
+    private cookie: CookieService,
   ) {}
 
   ngOnInit(): void {
@@ -76,14 +76,15 @@ export class LoginComponent implements OnInit {
         if (response.status === 200) {
           // Se a resposta for 200 (OK)
           this.router.navigate(['']); // Navega para a página de cadastro
-          this.cookie.set('USER_TOKEN', response.accessToken)
+          this.cookie.set('USER_TOKEN', response.accessToken);
 
-          alert('Seja Bem-Vindo!!')
+          alert('Seja Bem-Vindo!!');
         }
       },
       error: (error: HttpErrorResponse) => {
         // Se ocorrer um erro na solicitação
         console.log(error); // Exibe o erro no console
+        alert('Login inválido!!');
       },
     });
   }

@@ -9,3 +9,7 @@ export interface LoginEnvio{
   login: string,
   password: string,
 }
+
+// export interface ValidarToken {
+
+// }
