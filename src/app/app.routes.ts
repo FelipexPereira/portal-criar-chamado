@@ -7,6 +7,14 @@ import { AuthGuardService } from './guards/auth-guard.service';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: CadastroChamadoComponent,  },
-  { path: 'dashboard', component: TreinoComponent, canActivate: [AuthGuardService]},
+  {
+    path: '',
+    component: CadastroChamadoComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'dashboard',
+    component: TreinoComponent,
+    canActivate: [AuthGuardService],
+  },
 ];
